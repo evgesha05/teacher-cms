@@ -22,6 +22,24 @@
 
 </select>
 
+<hr />
+
+<label for="">Изображение записи</label>
+<select class="form-control" name="image_show">
+  @if (isset($article->id))
+    <option value="0" @if ($article->image_show == 0) selected="" @endif>Не отображать</option>
+    <option value="1" @if ($article->image_show == 1) selected="" @endif>Отображать</option>
+  @else
+    <option value="0">Не отображать</option>
+    <option value="1">Отображать</option>
+  @endif
+</select>
+
+<label for="">Ссылка на изображение записи</label>
+<input type="text" class="form-control" name="image" placeholder="Изображение записи блога" value="{{$article->image or ""}}">
+
+<hr />
+
 <label for="">Краткое описание</label>
 <textarea class="form-control" id="description_short" name="description_short">{{$article->description_short or ""}}</textarea>
 

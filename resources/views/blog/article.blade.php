@@ -5,12 +5,19 @@
 @section('meta_description', $article->meta_description)
 
 @section('content')
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12">
-        <h1>{{$article->title}}</h1>
-        <p>{!!$article->description!!}</p>
-      </div>
-    </div>
+  <div class="col-sm-8">
+
+    <h1>{{$article->title}}</h1>
+    <p>Опубликовано {!!$article->created_at!!}</p>
+
+    @if ($article->image_show)
+      <p><img class="img-responsive" src="{{$article->image}}" alt=""></p>
+    @endif
+
+    <p>{!!$article->description!!}</p>
+
   </div>
+
+  @include('layouts.right_column')
+
 @endsection
