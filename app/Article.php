@@ -25,9 +25,20 @@ class Article extends Model
     {
         return $this->morphToMany('App\Category', 'categoryable');
     }
-    
     public function scopeLastArticles($query, $count)
     {
         return $query->orderBy('created_at', 'desc')->take($count)->get();
+    }
+
+    /**
+     * Поиск по записям блога
+     */
+    public function scopeSearch($query, $search)
+    {
+        return $query->where('title', 'like', '%'.$search.'%')
+                      ->orWhere('description_short', 'like', '%'.$search.'%')
+                      ->orWhere('description', 'like', '%'.$search.'%')
+                      ->orWhere('meta_description', 'like', '%'.$search.'%')
+                      ->orWhere('meta_keyword', 'like', '%'.$search.'%');
     }
 }
