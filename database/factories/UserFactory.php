@@ -25,6 +25,7 @@ $factory->define(App\User::class, function (Faker $faker) {
 /**
  * Состояние для учетной записи администратора
  */
+
 $factory->state(App\User::class, 'admin', [
       'name' => 'admin',
       'email' => 'admin@test.ru',
