@@ -94,7 +94,7 @@ class ArticleController extends Controller
         }
         return redirect()->route('admin.article.index');
     }
-
+    
     /**
      * Remove the specified resource from storage.
      *
