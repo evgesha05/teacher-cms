@@ -53,6 +53,7 @@
                             <li><a href="{{route('admin.article.index')}}">Записи блога</a></li>
                           </ul>
                         </li>
+                        <li><a href="{{ route('admin.page.index')}}">Страницы</a></li>
                         <li class="dropdown">
                           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Управление пользователями</a>
                           <ul class="dropdown-menu" role="menu">
